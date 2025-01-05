@@ -1,0 +1,6 @@
+spicetify/
+.idea/
+.vsc/
+
+**/*.log
+
