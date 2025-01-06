@@ -3,7 +3,11 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 zstyle ':omz:update' mode disabled  # disable automatic updates
 
-plugins=(git)
+plugins=(
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
 source $ZSH/oh-my-zsh.sh
 
 autoload -Uz compinit && compinit       # Loads completion modules
