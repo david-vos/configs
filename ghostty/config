@@ -2,9 +2,14 @@ command = zsh
 
 background-opacity = 0.7
 macos-titlebar-style=transparent
+window-theme = dark
+macos-non-native-fullscreen = true
+
 
 shell-integration-features = no-cursor,sudo,no-title
-cursor-style = block
+cursor-style = bar
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
 window-colorspace = "display-p3"
 window-padding-balance = true
@@ -22,3 +27,4 @@ keybind = cmd+s>6=goto_tab:6
 keybind = cmd+s>7=goto_tab:7
 keybind = cmd+s>8=goto_tab:8
 keybind = cmd+s>9=goto_tab:9
+
