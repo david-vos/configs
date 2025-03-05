@@ -2,6 +2,7 @@ spicetify/
 .idea/
 .vsc/
 github-copilot/
+.DS_Store
 
 **/*.log
 
