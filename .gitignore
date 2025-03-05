@@ -1,6 +1,7 @@
 spicetify/
 .idea/
 .vsc/
+github-copilot/
 
 **/*.log
 

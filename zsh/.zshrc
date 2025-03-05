@@ -19,9 +19,11 @@ setopt LIST_PACKED                      # Smallest completion menu
 setopt AUTO_PARAM_KEYS                  # Intelligent handling of characters
 setopt AUTO_PARAM_SLASH                 # after a completion
 setopt AUTO_REMOVE_SLASH                # Remove trailing slash when needed
+
 bindkey -v
 bindkey '^?' backward-delete-char # Enable backspace after vicmd
 bindkey '^h' backward-delete-char
+
 eval "$(starship init zsh)" # Bootstrap starship shells
 
 export PATH=$PATH:/Users/vos/.spicetify
@@ -29,3 +31,5 @@ export PATH=$PATH:/Users/vos/.spicetify
 export NVM_DIR="$HOME/.nvm"
     [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
     [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+    alias vim="nvim"
