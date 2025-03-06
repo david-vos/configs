@@ -11,6 +11,7 @@ vim.cmd [[
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.wrap = false
 
 -- Relativ line number and font settings
 vim.wo.relativenumber = true
