@@ -1,6 +1,7 @@
 spicetify/
 .idea/
 .vsc/
+yarn/
 github-copilot/
 .DS_Store
 
