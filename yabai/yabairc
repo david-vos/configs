@@ -9,7 +9,7 @@ yabai -m config window_placement second_child
 # Global padding defaults
 # These will be overridden by display-specific settings below if they are applied.
 yabai -m config window_gap 12
-yabai -m config top_padding 0   # Default to 0, specific values below will set it.
+yabai -m config top_padding 5   # Default to 0, specific values below will set it.
 yabai -m config bottom_padding 4
 yabai -m config right_padding 4
 yabai -m config left_padding 4
@@ -35,15 +35,15 @@ yabai -m config mouse_drop_action swap
 # Adjust these values until your MacBook display looks correct.
 # top_padding 0 and external_bar all:30:0 is a good starting point for the MacBook.
 # This assumes the 30px covers the macOS menubar + a little extra gap.
-yabai -m config --display 1 top_padding 0
-yabai -m config --display 1 external_bar all:30:0
+yabai -m config --display 1 top_padding 5
+yabai -m config --display 1 external_bar all:44:0
 
 
 # --- Configuration for External Monitor (ID 2) ---
 # (Based on your 'w:1920' query output)
-# This assumes you want a total of 44px space at the top.
+# This assumes you want a total of 40px space at the top.
 # You can set top_padding to 0 if external_bar should handle all 44px.
-yabai -m config --display 2 top_padding 0
+yabai -m config --display 2 top_padding 5
 yabai -m config --display 2 external_bar all:44:0
 
 
