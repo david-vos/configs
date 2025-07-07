@@ -1,25 +1,57 @@
 # ~/.config/yabai/yabairc
 
-# bsp, stack or float
-yabai -m config layout bsp
+# --- Global Yabai Settings ---
 
+# Layout and window placement
+yabai -m config layout bsp
 yabai -m config window_placement second_child
 
-# padding
+# Global padding defaults
+# These will be overridden by display-specific settings below if they are applied.
 yabai -m config window_gap 12
-yabai -m config top_padding 4
+yabai -m config top_padding 0   # Default to 0, specific values below will set it.
 yabai -m config bottom_padding 4
 yabai -m config right_padding 4
 yabai -m config left_padding 4
 
-# mouse settings
+# Mouse settings
 yabai -m config mouse_follows_focus on
 yabai -m config mouse_modifier alt
-# left click and drag
 yabai -m config mouse_action1 move
-# right click and drag
 yabai -m config mouse_action2 resize
 yabai -m config mouse_drop_action swap
 
-# disable yabai for these apps
+# Disable yabai for these apps
 # yabai -m rule --add app="^Discord$" manage=off
+
+
+# --- Display-Specific Padding & External Bar (Hardcoded IDs) ---
+
+# IMPORTANT: Ensure these Display IDs (1 and 2) consistently match your monitors.
+# You can check with 'yabai -m query --displays' after connecting your monitors.
+
+# --- Configuration for MacBook Built-in Display (ID 1) ---
+# (Based on your 'w:1800' query output)
+# Adjust these values until your MacBook display looks correct.
+# top_padding 0 and external_bar all:30:0 is a good starting point for the MacBook.
+# This assumes the 30px covers the macOS menubar + a little extra gap.
+yabai -m config --display 1 top_padding 0
+yabai -m config --display 1 external_bar all:30:0
+
+
+# --- Configuration for External Monitor (ID 2) ---
+# (Based on your 'w:1920' query output)
+# This assumes you want a total of 44px space at the top.
+# You can set top_padding to 0 if external_bar should handle all 44px.
+yabai -m config --display 2 top_padding 0
+yabai -m config --display 2 external_bar all:44:0
+
+
+# --- Event Signal to Re-apply on Display Change ---
+
+# This is still necessary! When displays change, yabai needs to know to re-read
+# these display-specific settings for the active monitors.
+# This will execute the entire yabairc again, effectively reapplying the
+# relevant display config commands for currently connected displays.
+yabai -m signal --remove event=display_change
+yabai -m signal --add event=display_change action="source ~/.config/yabai/yabairc"
