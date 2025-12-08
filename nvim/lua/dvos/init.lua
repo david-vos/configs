@@ -1,6 +1,7 @@
 require("dvos.remap")
 require("config.lazy")
 require("config.cpm")
+require("swift-dev") -- Swift development support
 
 -- Make the background transpara
 vim.cmd [[
